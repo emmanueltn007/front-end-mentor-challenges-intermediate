@@ -13,7 +13,7 @@ function Hero () {
                     </span>
                     MONOGRAPH DASHBOARD
                 </span>
-                <h1 className="text-5xl md:text-3xl font-bold">
+                <h1 className="text-5xl md:text-7xl font-bold">
                     POWERFUL INSIGHTS INTO YOUR TEAM
                 </h1>
                 <p className="text-gray-500 font-medium">
