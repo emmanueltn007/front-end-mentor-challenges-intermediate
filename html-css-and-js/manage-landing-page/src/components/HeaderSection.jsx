@@ -8,7 +8,7 @@ function HeaderSection() {
     setIsOpen((prev) => !prev);
   }
   return (
-    <header className="flex justify-between pl-8 pr-8 pt-16 pb-16 md:pl-16 md:pr-16 relative">
+    <header className="flex justify-between pl-8 pr-8 pt-16 pb-8 md:px-16 relative">
       <div>
         <img src="/images/logo.svg" alt="manage-logo-image" />
       </div>

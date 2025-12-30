@@ -4,7 +4,7 @@ import HeaderSection from './components/HeaderSection'
 import HeroSection from './components/HeroSection';
 import SignupSection from './components/SignupSection';
 import TestimonialsSection from './components/TestimonialsSection';
-import './App.css'
+import './index.css';
 
 function App () {
   return (
