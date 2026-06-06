@@ -5,7 +5,8 @@ import WeatherForecastGrid from "./components/weatherDisplayComponents/WeatherFo
 
 function App() {
   const [searchInput, setSearchInput] = useState("");
-  const [weatherData, setWeatherData] = useState({});
+  const [weatherData, setWeatherData] = useState(null);
+  const [location, setLocation] = useState("");
 
   async function handleUserSearch() {
     const geoResponse = await fetch(
@@ -20,7 +21,9 @@ function App() {
       );
     }
 
-    const { latitude, longitude } = geoData.results[0];
+    const { latitude, longitude, name,country } = geoData.results[0];
+
+    setLocation(`${name}, ${country}`);
 
     const weatherResponse = await fetch(
       `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=temperature_2m_max,temperature_2m_min&hourly=temperature_2m&current=precipitation,temperature_2m,relative_humidity_2m,wind_speed_10m`,
@@ -30,13 +33,13 @@ function App() {
 
     setWeatherData(data);
 
-    console.log(data.current);
+    console.log(data);
   }
   return (
     <main className="bg-[hsl(243,96%,9%)] font-['DM Sans',sans-serif]">
       <Header />
       <SearchSection setSearchInput={setSearchInput} searchInput={searchInput} handleUserSearch={handleUserSearch}  />
-      <WeatherForecastGrid />
+      <WeatherForecastGrid location={location} weatherData={weatherData} />
     </main>
   );
 }
