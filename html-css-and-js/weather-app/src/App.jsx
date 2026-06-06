@@ -1,10 +1,12 @@
 import Header from "./components/Header";
+import SearchSection from "./components/SearchSection";
 
 function App () {
   return (
-    <div className="bg-[hsl(248,70%,36%)]">
+    <main className="bg-[hsl(243,96%,9%)] font-['DM Sans',sans-serif]">
       <Header />
-    </div>
+      <SearchSection />
+    </main>
   );
 }
 
